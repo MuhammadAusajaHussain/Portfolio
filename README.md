@@ -111,7 +111,7 @@ EMAIL_PASS=your-app-password
 🔗 https://your-render-url.onrender.com
 
 ## 🙋‍♂️ Contact
-📧 Email: ausajamohammed@gmail.com
+📧 Email: ausajamohammed@gmail.com  
 🔗 LinkedIn: https://www.linkedin.com/in/muhammad-ausaja-hussain-829135317
 
 ## 📸 Screenshots
