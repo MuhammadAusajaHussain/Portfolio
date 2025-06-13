@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+    <div class="flex-1 flex flex-row px-4 py-8">
+        <div class="w-1/2 my-auto px-15">
+            <div class="w-full text-6xl font-semibold mb-4">
+                Hi, I am 
+                <br> 
+                Muhammad Ausaja Hussain
+            </div>
+            <div class="text-left text-md text-gray-400 text-shadow-md mb-7">
+                Software Engineer
+            </div>
+            <div class="flex flex-row space-x-3">
+                <form action="/cv" method="get">
+                    <button class="bg-green-600 px-6 py-2 font-semibold">Download Resume</button>
+                </form>
+                <form action="/about" method="get">
+                    <button class="px-6 py-2 border border-white hover:bg-white hover:text-gray-800 transition duration-300 ease-in-out">
+                        Learn More
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="w-1/2 my-auto">
+            <img src="./images/ausaja.jpg" alt="Muhammad Ausaja Hussain" class="rounded-full w-3/5 mx-auto shadow-lg shadow-gray-700">
+        </div>
+    </div>
+</body>
+</html>

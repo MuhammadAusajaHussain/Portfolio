@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/container-queries@0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/line-clamp@0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/animations@0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5"></script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+    <div class="my-30 mx-auto w-full flex flex-col items-center px-4 py-8 overflow-y-auto">
+        <!-- Project 1 -->
+        <div class="flex flex-row w-4/5">
+            <div class="w-1/2 px-6 py-6 border border-gray-800">
+                <h1 class="text-3xl font-bold mb-4">Library Hub 2.0</h1>
+                <p class="text-gray-400 mb-4">
+                    A modern, responsive, and role-based Library Management System built using the ASP.NET MVC framework with a clean UI powered by Tailwind CSS. This system simplifies and digitizes core library operations like book borrowing, user registration, profile management, and administrative controls.
+                </p>
+                <div class="flex flex-col space-y-2">
+                    <a href="https://github.com/MuhammadAusajaHussain/Library-Hub-2.0" class="text-blue-400 hover:underline">
+                        View Source Code
+                    </a>
+                    <a href="/projects/Project_1/Report.docx" class="text-blue-400 hover:underline">
+                        View Report
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2">
+                <!-- Image Slider Component -->
+                <div class="relative w-full h-72 overflow-hidden" 
+                    x-data="{ activeSlide: 0, slides: ['/projects/Project_1/images/image-1.png', '/projects/Project_1/images/image-2.png', '/projects/Project_1/images/image-3.png', '/projects/Project_1/images/image-4.png'] }"
+                >
+                    <!-- Slides -->
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <img :src="slide" alt="Project Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
+                            :class="{ 'opacity-100': index === activeSlide, 'opacity-0': index !== activeSlide }">
+                    </template>
+
+                    <!-- Left Arrow -->
+                    <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+                            class="flex flex-row justify-center items-center absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white py-1 px-2 hover:bg-black/70">
+                        &#8592;
+                    </button>
+
+                    <!-- Right Arrow -->
+                    <button @click="activeSlide = (activeSlide + 1) % slides.length"
+                            class="flex flex-row justify-center items-center absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 text-white hover:bg-black/70 py-1 px-2 ">
+                        &#8594;
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded-full text-white text-sm font-medium">
+                        <span x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="flex flex-row w-4/5 mt-4">
+            <div class="w-1/2 px-6 py-6 border border-gray-800">
+                <h1 class="text-3xl font-bold mb-4">Portify</h1>
+                <p class="text-gray-400 mb-4">
+                    This project was developed for the DeyDay2025 Web-Nexus Competition, showcasing our team's full-stack web development skills. It includes a robust front end, dynamic backend features, and a connected SQL database.                </p>
+                <div class="flex flex-col space-y-2">
+                    <a href="https://github.com/MuhammadAusajaHussain/Portify" class="text-blue-400 hover:underline">
+                        View Source Code
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2">
+                <!-- Image Slider Component -->
+                <div class="relative w-full h-72 overflow-hidden" 
+                    x-data="{ activeSlide: 0, slides: ['/projects/Project_2/images/image-1.png', '/projects/Project_2/images/image-2.png'] }"
+                >
+                    <!-- Slides -->
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <img :src="slide" alt="Project Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
+                            :class="{ 'opacity-100': index === activeSlide, 'opacity-0': index !== activeSlide }">
+                    </template>
+
+                    <!-- Left Arrow -->
+                    <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+                            class="flex flex-row justify-center items-center absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white py-1 px-2 hover:bg-black/70">
+                        &#8592;
+                    </button>
+
+                    <!-- Right Arrow -->
+                    <button @click="activeSlide = (activeSlide + 1) % slides.length"
+                            class="flex flex-row justify-center items-center absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 text-white hover:bg-black/70 py-1 px-2 ">
+                        &#8594;
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded-full text-white text-sm font-medium">
+                        <span x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="flex flex-row w-4/5 mt-4">
+            <div class="w-1/2 px-6 py-6 border border-gray-800">
+                <h1 class="text-3xl font-bold mb-4">Library Management System</h1>
+                <p class="text-gray-400 mb-4">
+                    An advanced Library Management System developed using Spring Boot, Thymeleaf, and Oracle Database. This application streamlines library operations by providing functionalities such as user registration, book reservation, borrowing and return processes, fine management, and inventory control.
+                </p>
+                <div class="flex flex-col space-y-2">
+                    <a href="https://github.com/MuhammadAusajaHussain/Library-Management-System" class="text-blue-400 hover:underline">
+                        View Source Code
+                    </a>
+                    <a href="/projects/Project_3/Report.docx" class="text-blue-400 hover:underline">
+                        View Report
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2">
+                <!-- Image Slider Component -->
+                <div class="relative w-full h-72 overflow-hidden" 
+                    x-data="{ activeSlide: 0, slides: ['/projects/Project_3/images/image-1.png', '/projects/Project_3/images/image-2.png', '/projects/Project_3/images/image-3.png', '/projects/Project_3/images/image-4.png', '/projects/Project_3/images/image-5.png', '/projects/Project_3/images/image-6.png'] }"
+                >
+                    <!-- Slides -->
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <img :src="slide" alt="Project Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
+                            :class="{ 'opacity-100': index === activeSlide, 'opacity-0': index !== activeSlide }">
+                    </template>
+
+                    <!-- Left Arrow -->
+                    <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+                            class="flex flex-row justify-center items-center absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white py-1 px-2 hover:bg-black/70">
+                        &#8592;
+                    </button>
+
+                    <!-- Right Arrow -->
+                    <button @click="activeSlide = (activeSlide + 1) % slides.length"
+                            class="flex flex-row justify-center items-center absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 text-white hover:bg-black/70 py-1 px-2 ">
+                        &#8594;
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded-full text-white text-sm font-medium">
+                        <span x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="flex flex-row w-4/5 mt-4">
+            <div class="w-1/2 px-6 py-6 border border-gray-800">
+                <h1 class="text-3xl font-bold mb-4">License Plate Office Simulation</h1>
+                <p class="text-gray-400 mb-4">
+                    This project models and compares two customer handling systems in an automotive license plate office using Arena Simulation Software. The aim is to analyze customer flow and identify which configuration offers better performance in terms of average and maximum time spent in the system.                </p>
+                <div class="flex flex-col space-y-2">
+                    <a href="https://github.com/MuhammadAusajaHussain/License-Plate-Office-Simulation" class="text-blue-400 hover:underline">
+                        View Source Code
+                    </a>
+                    <a href="/projects/Project_4/Report.docx" class="text-blue-400 hover:underline">
+                        View Report
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2">
+                <!-- Image Slider Component -->
+                <div class="relative w-full h-72 overflow-hidden" 
+                    x-data="{ activeSlide: 0, slides: ['/projects/Project_4/images/image-1.png', '/projects/Project_4/images/image-2.png'] }"
+                >
+                    <!-- Slides -->
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <img :src="slide" alt="Project Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
+                            :class="{ 'opacity-100': index === activeSlide, 'opacity-0': index !== activeSlide }">
+                    </template>
+
+                    <!-- Left Arrow -->
+                    <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+                            class="flex flex-row justify-center items-center absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white py-1 px-2 hover:bg-black/70">
+                        &#8592;
+                    </button>
+
+                    <!-- Right Arrow -->
+                    <button @click="activeSlide = (activeSlide + 1) % slides.length"
+                            class="flex flex-row justify-center items-center absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 text-white hover:bg-black/70 py-1 px-2 ">
+                        &#8594;
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded-full text-white text-sm font-medium">
+                        <span x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Other Projects -->
+    </div>
+</body>
+</html>

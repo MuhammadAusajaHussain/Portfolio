@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+    <div class="flex-1 flex flex-col justify-center mt-30 px-4 py-8">
+        <!-- Title -->
+        <div class="text-center text-5xl font-semibold mb-12">Get in touch</div>
+        <!-- Contact Form -->
+        <div class="flex-1 flex flex-col w-3/5 p-8 mx-auto">
+            <% if (typeof(success) === "undefined") { %>
+            <% } else if (success == true) { %>
+                <div class="border border-green-600 rounded-md py-3 text-center text-xl font-semibold mb-14 text-green-600">&#9432; Thank you for contacting, I will respond to you as soon as possible</div>
+            <% } else if (success == false) { %>
+                <div class="border border-red-600 rounded-md py-3 text-center text-xl font-semibold mb-14 text-red-600">&#9432; <%= error %></div>
+            <% } %>
+            <form action="/contact" method="post">
+                <div class="flex flex-col">
+                    <div class="flex flex-row justify-between space-x-4 w-full">
+                        <input type="text" name="firstName" placeholder="First Name"
+                            class="w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-none focus:outline-none focus:border-2 focus:border-gray-500 focus:rounded-md transition duration-300 ease-in-out">
+                        <input type="text" name="lastName" placeholder="Last Name"
+                            class="w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-none focus:outline-none focus:border-2 focus:border-gray-500 focus:rounded-md transition duration-300 ease-in-out">
+                    </div>
+                    <div class="flex flex-row justify-between space-x-4 w-full mt-8">
+                        <input type="email" name="email" placeholder="Email"
+                            class="w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-none focus:outline-none focus:border-2 focus:border-gray-500 focus:rounded-md transition duration-300 ease-in-out">
+                        <input type="text" name="phoneNumber" placeholder="Phone Number"
+                            class="w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-none focus:outline-none focus:border-2 focus:border-gray-500 focus:rounded-md transition duration-300 ease-in-out">
+                    </div>
+                    <textarea name="message" placeholder="Enter your message" wrap="hard" cols="12" rows="7"
+                        class="mt-8 w-full p-2 border-0 border-2 border-gray-700 bg-transparent rounded-none focus:outline-none focus:border-2 focus:border-gray-500 transition duration-300 ease-in-out resize-none"></textarea>
+                    <button type="submit" class="mt- mx-auto px-8 py-3 bg-green-600 mt-8">Submit Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
