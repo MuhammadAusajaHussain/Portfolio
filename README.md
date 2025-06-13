@@ -95,7 +95,7 @@ EMAIL_PASS=your-app-password
 ```
 3. In your index.js, use **process.env.EMAIL_USER** and **EMAIL_PASS** with dotenv.
 
-  
+
 ## 🚀 Deployment (on Render)
 
 1. Push your code to GitHub
@@ -109,4 +109,23 @@ EMAIL_PASS=your-app-password
 
 ## 🧪 Live Demo
 🔗 https://your-render-url.onrender.com
+
+## 🙋‍♂️ Contact
+📧 Email: ausajamohammed@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/muhammad-ausaja-hussain-829135317
+
+## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/e08efb13-4d1d-4914-9e9a-bb5fa16e9e22)
+![image](https://github.com/user-attachments/assets/4510b7b3-c2a2-415f-a610-f5045027ece3)
+![image](https://github.com/user-attachments/assets/f4495e1e-98bd-40e5-a13c-f3e5c9783a59)
+![image](https://github.com/user-attachments/assets/27347d82-c8ce-4bb5-b0e9-831c1c35418e)
+![image](https://github.com/user-attachments/assets/28696edc-aa1f-4fcd-8fa4-22c19b56391c)
+![image](https://github.com/user-attachments/assets/dffcf2ae-7976-447b-91c4-b242a5407b61)
+![image](https://github.com/user-attachments/assets/c247f525-c94d-4aef-a561-11bf0d1d89b0)
+![image](https://github.com/user-attachments/assets/28224ffd-4d97-43ed-9253-36d926c1fb8e)
+
+
+
+
+
 
