@@ -3,6 +3,7 @@
 This is my personal portfolio website built with **Node.js**, **Express.js**, **EJS**, and **Tailwind CSS**.  
 It showcases my projects, skills, and provides a contact form with integrated email functionality using **Nodemailer**.
 
+Deployment at: https://ausaja-portfolio.up.railway.app/
 
 ## 📌 Features
 
@@ -82,34 +83,7 @@ It showcases my projects, skills, and provides a contact form with integrated em
 - package-lock.json
 - package.json
 - README.md
-
   
-## 📧 Email Configuration
-
-To enable contact form emails:
-1. Create a `.env` file
-2. Add the following:
-```env
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-app-password
-```
-3. In your index.js, use **process.env.EMAIL_USER** and **EMAIL_PASS** with dotenv.
-
-
-## 🚀 Deployment (on Render)
-
-1. Push your code to GitHub
-2. Go to https://render.com
-3. Create a new Web Service linked to your GitHub repo
-4. Set:
-  - Build Command: npm install
-  - Start Command: node index.js
-  - Environment Vars: add your email credentials
-
-
-## 🧪 Live Demo
-🔗 https://your-render-url.onrender.com
-
 ## 🙋‍♂️ Contact
 📧 Email: ausajamohammed@gmail.com  
 🔗 LinkedIn: https://www.linkedin.com/in/muhammad-ausaja-hussain-829135317
