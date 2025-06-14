@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+        plugins: [],
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+  <%- include('./partials/header') %>
+
+  <div class="my-16 mx-auto w-full flex flex-col items-center px-4 py-8">
+    <% const projects = [
+      {
+        title: "Library Hub 2.0",
+        description: "A modern, responsive, and role-based Library Management System built using the ASP.NET MVC framework with a clean UI powered by Tailwind CSS. This system simplifies and digitizes core library operations like book borrowing, user registration, profile management, and administrative controls.",
+        links: [
+          { text: "View Source Code", url: "https://github.com/MuhammadAusajaHussain/Library-Hub-2.0" },
+          { text: "View Report", url: "/projects/Project_1/Report.docx" }
+        ],
+        images: [1, 2, 3, 4].map(i => `/projects/Project_1/images/image-${i}.png`)
+      },
+      {
+        title: "Portify",
+        description: "This project was developed for the DeyDay2025 Web-Nexus Competition, showcasing our team's full-stack web development skills. It includes a robust front end, dynamic backend features, and a connected SQL database.",
+        links: [
+          { text: "View Source Code", url: "https://github.com/MuhammadAusajaHussain/Portify" }
+        ],
+        images: [1, 2].map(i => `/projects/Project_2/images/image-${i}.png`)
+      },
+      {
+        title: "Library Management System",
+        description: "An advanced Library Management System developed using Spring Boot, Thymeleaf, and Oracle Database. This application streamlines library operations by providing functionalities such as user registration, book reservation, borrowing and return processes, fine management, and inventory control.",
+        links: [
+          { text: "View Source Code", url: "https://github.com/MuhammadAusajaHussain/Library-Management-System" },
+          { text: "View Report", url: "/projects/Project_3/Report.docx" }
+        ],
+        images: [1, 2, 3, 4, 5, 6].map(i => `/projects/Project_3/images/image-${i}.png`)
+      },
+      {
+        title: "License Plate Office Simulation",
+        description: "This project models and compares two customer handling systems in an automotive license plate office using Arena Simulation Software. The aim is to analyze customer flow and identify which configuration offers better performance in terms of average and maximum time spent in the system.",
+        links: [
+          { text: "View Source Code", url: "https://github.com/MuhammadAusajaHussain/License-Plate-Office-Simulation" },
+          { text: "View Report", url: "/projects/Project_4/Report.docx" }
+        ],
+        images: [1, 2].map(i => `/projects/Project_4/images/image-${i}.png`)
+      }
+    ]; %>
+
+    <% projects.forEach((project, i) => { %>
+      <div class="flex flex-col md:flex-row w-full md:w-4/5 mt-6 border border-gray-800 rounded-lg overflow-hidden">
+        <!-- Project Description -->
+        <div class="md:w-1/2 w-full px-6 py-6">
+          <h2 class="text-3xl font-bold mb-4"><%= project.title %></h2>
+          <p class="text-gray-400 mb-4"><%= project.description %></p>
+          <div class="flex flex-wrap gap-4">
+            <% project.links.forEach(link => { %>
+              <a href="<%= link.url %>" class="text-blue-400 hover:underline"><%= link.text %></a>
+            <% }) %>
+          </div>
+        </div>
+
+        <!-- Image Slider -->
+<div class="md:w-1/2 w-full">
+  <div class="relative w-full h-[10.9rem] md:h-72 overflow-hidden"
+       x-data="{ activeSlide: 0, slides: [<%= project.images.map(img => `'${img}'`).join(',') %>] }">
+       
+    <!-- Slides -->
+    <template x-for="(slide, index) in slides" :key="index">
+      <img :src="slide" :alt="`Slide ${index + 1} of ${project.title}`"
+           class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700"
+           :class="{ 'opacity-100': index === activeSlide, 'opacity-0': index !== activeSlide }">
+    </template>
+
+    <!-- Navigation Arrows -->
+    <button @click="activeSlide = (activeSlide === 0) ? slides.length - 1 : activeSlide - 1"
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 hover:bg-black/70">
+      &#8592;
+    </button>
+    <button @click="activeSlide = (activeSlide + 1) % slides.length"
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-2 py-1 hover:bg-black/70">
+      &#8594;
+    </button>
+
+    <!-- Slide Counter -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 px-4 py-1 rounded-full text-white text-sm">
+      <span x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    <% }); %>
+  </div>
+</body>
+
+</html>

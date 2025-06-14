@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+    <style>
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.7s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+
+    <div class="flex-1 flex flex-col justify-center mt-30 px-4 py-8">
+        <!-- Title -->
+        <div class="text-center text-5xl font-semibold mb-6 md:mb-12">Get in touch</div>
+        <!-- Contact Form -->
+        <div class="flex-1 flex flex-col w-full md:w-3/5 p-8 mx-auto">
+
+            <% if (typeof(success) !== "undefined") { %>
+                <% if (success === true) { %>
+                    <div class="animate-fade-in border border-green-600 rounded-md py-3 text-center text-md md:text-xl font-semibold mb-8 md:mb-14 text-green-600">
+                        &#9432; Thank you for contacting, I will respond to you as soon as possible
+                    </div>
+                <% } else if (success === false) { %>
+                    <div class="animate-fade-in border border-red-600 rounded-md py-3 text-center text-md md:text-xl font-semibold mb-8 md:mb-14 text-red-600">
+                        &#9432; <%= error %>
+                    </div>
+                <% } %>
+            <% } %>
+
+            <form action="/contact" method="post">
+                <div class="flex flex-col">
+                    <!-- Name Row -->
+                    <div class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
+                        <input type="text" name="firstName" placeholder="First Name" required
+                            class="w-full md:w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-md focus:outline-none focus:border-2 focus:border-gray-500 transition duration-300 ease-in-out">
+                        <input type="text" name="lastName" placeholder="Last Name" required
+                            class="w-full md:w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-md focus:outline-none focus:border-2 focus:border-gray-500 transition duration-300 ease-in-out">
+                    </div>
+
+                    <!-- Email and Phone Row -->
+                    <div class="flex flex-col mt-4 md:mt-8 md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
+                        <input type="email" name="email" placeholder="Email" required
+                            class="w-full md:w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-md focus:outline-none focus:border-2 focus:border-gray-500 transition duration-300 ease-in-out">
+                        <input type="text" name="phoneNumber" placeholder="Phone Number"
+                            class="w-full md:w-1/2 p-2 border-0 border-b-2 border-gray-700 bg-transparent rounded-md focus:outline-none focus:border-2 focus:border-gray-500 transition duration-300 ease-in-out">
+                    </div>
+
+                    <!-- Message Box -->
+                    <textarea name="message" placeholder="Enter your message" required wrap="hard" cols="12" rows="7"
+                        class="w-full mt-8 p-2 border-2 border-gray-700 bg-transparent rounded-md focus:outline-none focus:border-gray-500 transition duration-300 ease-in-out resize-none"></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="mx-auto mt-8 px-8 py-3 bg-green-600 rounded-md hover:bg-green-700 transition duration-300">
+                        Submit Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

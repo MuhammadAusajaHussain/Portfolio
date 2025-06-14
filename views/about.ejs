@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Ausaja Hussain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4ec0d1496f.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-950 text-white flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+
+    <div class="mt-16 md:mt-24 flex-1 mx-auto w-full flex flex-col px-4 py-12 space-y-24">
+
+        <section class="text-center">
+            <h1 class="text-5xl font-semibold mb-12">About Me</h1>
+            <p class="max-w-3xl mx-auto text-md px-5 md:px-0 md:text-lg text-gray-300">
+                I am currently pursuing my Bachelor's degree in Software Engineering at FAST University, Karachi, Pakistan.
+                I have a strong passion for software development and have gained experience in various programming languages
+                and technologies. I look forward to applying my skills into something bigger.
+                <br><br>
+                Beyond academics, I've actively participated in multiple student societies and events, honing my leadership,
+                communication, and teamwork skills.
+            </p>
+            <!-- Contact Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                <!-- Each Info Card -->
+                <% const contactData = [
+                    { label: 'Full Name', value: 'Muhammad Ausaja Hussain' },
+                    { label: 'Email Address', value: 'ausajamohammed@gmail.com' },
+                    { label: 'LinkedIn', value: 'Muhammad Ausaja Hussain', url: 'https://www.linkedin.com/in/muhammad-ausaja-hussain-829135317/' },
+                    { label: 'GitHub', value: 'MuhammadAusajaHussain', url: 'https://github.com/MuhammadAusajaHussain/' }
+                ]; %>
+                
+                <% contactData.forEach(info => { %>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="mb-4 flex justify-center items-center rounded-full bg-gray-800 w-16 h-16">
+                            <div class="rounded-full bg-green-600 w-3 h-3"></div>
+                        </div>
+                        <h3 class="font-semibold text-xl"><%= info.label %></h3>
+                        <% if (info.url) { %>
+                            <a href="<%= info.url %>" class="text-lg text-blue-400 hover:underline"><%= info.value %></a>
+                        <% } else { %>
+                            <p class="text-lg"><%= info.value %></p>
+                        <% } %>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="text-center">
+            <h2 class="text-5xl font-semibold mb-12">Skills</h2>
+
+            <div class="bg-gray-900 max-w-6xl mx-auto p-8 rounded-md">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 place-items-center">
+                    <% const skills = [
+                        ['c.png', 'C'], ['java.png', 'JAVA'], ['python.png', 'PYTHON'], ['excel.png', 'MS-EXCEL'],
+                        ['selenium.png', 'SELENIUM'], ['html.png', 'HTML'], ['css.png', 'CSS'], ['java-script.png', 'JavaScript'],
+                        ['thymeleaf.png', 'THYMELEAF'], ['react.png', 'REACT JS'], ['node-js.png', 'NODE JS'], ['express-js.png', 'EXPRESS JS'],
+                        ['spring-boot.png', 'SPRING BOOT'], ['asp-dot-net.png', 'ASP .NET'], ['my-sql.png', 'MYSQL'], ['microsoft-sql-server.png', 'MS SQL SERVER'],
+                        ['oracle.png', 'ORACLE'], ['mongodb.png', 'MONGO DB']
+                    ]; %>
+                    <% skills.forEach(skill => { %>
+                        <div class="flex flex-col items-center space-y-2">
+                            <img src="/assests/<%= skill[0] %>" class="w-16 h-16" />
+                            <span class="font-semibold text-lg"><%= skill[1] %></span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="text-center">
+            <h2 class="text-5xl font-semibold mb-12">Education</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <% const education = [
+                    {
+                        title: "Bachelor's Degree",
+                        field: "Software Engineering",
+                        place: "FAST University, Karachi",
+                        score: "CGPA: 3.66",
+                        duration: "Aug 2022 - Jun 2026"
+                    },
+                    {
+                        title: "Intermediate",
+                        field: "Pre-Engineering",
+                        place: "Aga Khan Higher Secondary School, Karimabad",
+                        score: "92%",
+                        duration: "Aug 2020 - Jun 2022"
+                    },
+                    {
+                        title: "Matriculation",
+                        field: "Computer Science",
+                        place: "Al-Murtaza School, Karachi",
+                        score: "79%",
+                        duration: "Aug 2007 - Jun 2020"
+                    }
+                ]; %>
+
+                <% education.forEach(item => { %>
+                    <div class="bg-gray-900 p-6 rounded-md text-left space-y-2">
+                    <h3 class="text-2xl font-bold text-center mb-3"><%= item.title %></h3>
+                    <p class="text-xl font-semibold"><%= item.field %></p>
+                    <p class="text-lg"><%= item.place %></p>
+                    <p class="text-lg"><%= item.score %></p>
+                    <p class="text-lg italic"><%= item.duration %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

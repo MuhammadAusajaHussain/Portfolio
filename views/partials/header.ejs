@@ -1,0 +1,56 @@
+<!-- Viewport Meta (make sure it's in your <head> somewhere) -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<div class="bg-gray-950 fixed top-0 left-0 w-full z-50 shadow-md shadow-gray-800">
+  <div class="flex items-center justify-between px-6 py-4">
+    <!-- Logo and Name -->
+    <div class="flex items-center space-x-2 font-semibold text-white">
+      <i class="fa-solid fa-user text-xl"></i>
+      <form action="/" method="get">
+        <button class="text-2xl sm:text-3xl font-bold">Ausaja</button>
+      </form>
+    </div>
+    
+    <!-- Hamburger Button (hidden on md and above) -->
+    <button id="menu-toggle" class="text-white text-2xl md:hidden">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <!-- Navigation Links (hidden on small screens) -->
+    <div class="hidden md:flex space-x-2 text-white">
+      <form action="/about" method="get">
+        <button class="text-sm px-3 py-2 rounded-md hover:bg-white hover:text-gray-900 transition">About Me</button>
+      </form>
+      <form action="/project" method="get">
+        <button class="text-sm px-3 py-2 rounded-md hover:bg-white hover:text-gray-900 transition">Projects</button>
+      </form>
+      <form action="/contact" method="get">
+        <button class="text-sm px-3 py-2 rounded-md hover:bg-white hover:text-gray-900 transition">Contact Me</button>
+      </form>
+    </div>
+  </div>
+  <!-- Mobile Menu (toggle this) -->
+   <div id="mobile-menu" class="hidden md:hidden flex flex-col text-white">
+    <form action="/about" method="get">
+      <button class="w-full text-center px-3 py-3 border-t border-gray-700 hover:bg-white hover:text-gray-900 transition">About Me</button>
+    </form>
+    <form action="/project" method="get">
+      <button class="w-full text-center px-3 py-3 border-t border-gray-700 hover:bg-white hover:text-gray-900 transition">Projects</button>
+    </form>
+    <form action="/contact" method="get">
+      <button class="w-full text-center px-3 py-3 border-t border-gray-700 hover:bg-white hover:text-gray-900 transition">Contact Me</button>
+    </form>
+  </div>
+</div>
+
+<!-- Toggle Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
