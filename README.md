@@ -2,7 +2,7 @@
 
 This is my personal portfolio website built with **Node.js**, **Express.js**, **EJS**, and **Tailwind CSS**.
 It showcases my projects, skills, and provides a contact form with integrated email functionality using **Nodemailer**.  
-Moreover, the UI is completely responsive so you can open it on your smart phone as well.
+Moreover, the UI is responsive so you can open it on your smart phone as well.
 
 Deployment at: https://ausaja-portfolio.up.railway.app/
 
