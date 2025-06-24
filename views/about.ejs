@@ -80,38 +80,38 @@
         <section class="text-center">
             <h2 class="text-5xl font-semibold mb-12">Education</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <% const education = [
-                    {
-                        title: "Bachelor's Degree",
-                        field: "Software Engineering",
-                        place: "FAST University, Karachi",
-                        score: "CGPA: 3.66",
-                        duration: "Aug 2022 - Jun 2026"
-                    },
-                    {
-                        title: "Intermediate",
-                        field: "Pre-Engineering",
-                        place: "Aga Khan Higher Secondary School, Karimabad",
-                        score: "92%",
-                        duration: "Aug 2020 - Jun 2022"
-                    },
-                    {
-                        title: "Matriculation",
-                        field: "Computer Science",
-                        place: "Al-Murtaza School, Karachi",
-                        score: "79%",
-                        duration: "Aug 2007 - Jun 2020"
-                    }
-                ]; %>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+            <% const education = [
+                {
+                    title: "Bachelors",
+                    field: "Software Engineering",
+                    place: "FAST University, Karachi",
+                    score: "CGPA: 3.66",
+                    duration: "Aug 2022 - Jun 2026"
+                },
+                {
+                    title: "Intermediate",
+                    field: "Pre-Engineering",
+                    place: "Aga Khan Higher Secondary School, Karimabad",
+                    duration: "Aug 2020 - Jun 2022"
+                },
+                {
+                    title: "Matriculation",
+                    field: "Computer Science",
+                    place: "Al-Murtaza School, Karachi",
+                    duration: "Aug 2007 - Jun 2020"
+                }
+            ]; %>
 
-                <% education.forEach(item => { %>
-                    <div class="bg-gray-900 p-6 rounded-md text-left space-y-2">
-                    <h3 class="text-2xl font-bold text-center mb-3"><%= item.title %></h3>
-                    <p class="text-xl font-semibold"><%= item.field %></p>
-                    <p class="text-lg"><%= item.place %></p>
-                    <p class="text-lg"><%= item.score %></p>
-                    <p class="text-lg italic"><%= item.duration %></p>
+            <% education.forEach(item => { %>
+                <div class="bg-gray-900 p-6 rounded-md text-left space-y-2 shadow-lg hover:shadow-xl transition">
+                        <h3 class="text-2xl font-bold text-center mb-3"><%= item.title %></h3>
+                        <p class="text-xl font-semibold"><%= item.field %></p>
+                        <p class="text-base"><%= item.place %></p>
+                        <% if (item.score) { %>
+                            <p class="text-base"><%= item.score %></p>
+                        <% } %>
+                        <p class="text-base italic"><%= item.duration %></p>
                     </div>
                 <% }); %>
             </div>
